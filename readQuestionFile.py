@@ -1,15 +1,23 @@
-from random import randint
+from random import choice
 
-def buscarPergunta(level):
-    with open("questions.txt", "r") as arquivo:
-        linhas = arquivo.readlines()
+with open("questions.txt", "r") as arquivo:
+    linhas = arquivo.readlines()
+    easyQuestions = linhas[0:6]
+    mediumQuestions = linhas[6:12]
+    difficultQuestions = linhas[13:len(linhas)-1]
+
+        
+def searchQuestion(level):        
         if level == 1:
-            indexSorteado = randint(0,5)
+            pergunta = choice(easyQuestions)
+            easyQuestions.remove(pergunta)
         elif level == 2:
-            indexSorteado = randint(6,11)
+            pergunta = choice(mediumQuestions)
+            mediumQuestions.remove(pergunta)
         else:
-            indexSorteado = randint(12,len(linhas)-1)        
-        pergunta = linhas[indexSorteado].split(',')
+            pergunta = choice(difficultQuestions)
+            difficultQuestions.remove(pergunta)        
+        pergunta = pergunta.split(',')
         enunciado = pergunta[0]
         alternativas = pergunta[1]
         gabarito = pergunta[2]

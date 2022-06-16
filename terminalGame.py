@@ -1,8 +1,7 @@
 #ADD tips option
 #ADD more questions
-#Fix the repetitive question problem
 
-from readQuestionFile import buscarPergunta
+from readQuestionFile import searchQuestion
 from rules import printRules
 
 class Player:
@@ -30,7 +29,7 @@ while (acertou) and (contador <= 15):
     else:
         level = 3
 
-    gabarito = buscarPergunta(level)
+    gabarito = searchQuestion(level)
     decisao = int(input(f'Would you like to: 1-Answer, 2-Get a tip or 3-Leave with your money: ${amountWon}?\n'))
     if (decisao == 1):
         resposta = input('Very well, what is your guess then?').upper()
