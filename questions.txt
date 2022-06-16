@@ -7,6 +7,6 @@ What is the max length of a TikTok video? ,A.45 seconds B.60 seconds C.30 second
 What year was the United Nations established? ,A.1945 B.1918 C.1964 D.1954,A,
 What is the most common surname in the United States? ,A.Johnson B.Williams C.Jones D.Smith,D,
 In which decade was Madonna born? ,A.50 B.60 C.70 D.80, A,
-In Harry Potter what is the name of The Weasley's house? ,A.A Toca B.A Cabana C.O Pomar D.A Morada, A,
+In Harry Potter what is the name of The Weasley house? ,A.A Toca B.A Cabana C.O Pomar D.A Morada, A,
 Which of these Tom Hanks films was first made? ,A.Catch Me If You Can B.Forrest Gump C.The Terminal D.You've got mail,B,
 Who did Anne Hathaway play in Les Miserables? ,A.Javert B.Éponine C.Fantine D.Cosette,C,
