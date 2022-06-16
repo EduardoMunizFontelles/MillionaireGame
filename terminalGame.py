@@ -1,4 +1,4 @@
-from random import randint
+from readQuestionFile import buscarPergunta
 from rules import printRules
 
 class Player:
@@ -9,22 +9,34 @@ class GameLogic:
 
 printRules()
 
-def buscarPergunta(level):
-    with open("questions.txt", "r") as arquivo:
-        linhas = arquivo.readlines()
-        if level == 1:
-            indexSorteado = randint(0,3)
-        elif level == 2:
-            indexSorteado = randint(4,7)
-        else:
-            indexSorteado = randint(8,len(linhas))        
-        pergunta = linhas[indexSorteado].split(',')
-        enunciado = pergunta[0]
-        alternativas = pergunta[1]
-        gabarito = pergunta[2]
-        print(enunciado)
-        print(alternativas)
-        return gabarito
+acertou = True
+ganhou = False
+contador = 1
+prize = 100
 
-level = int(input('Digite o nivel: '))            
-buscarPergunta(level)
+while (acertou) and not(ganhou):
+    print(f'Rodada {contador}!')
+    print(f'Question prize: ${prize}!')
+
+    if (contador <= 5):
+        level = 1
+    elif (contador <= 10):
+        level = 2
+    else:
+        level = 3
+
+    gabarito = buscarPergunta(level)
+
+    resposta = input('Digite a sua resposta: ').upper()
+
+    if (resposta == gabarito):
+        print('Certa Resposta!')
+        if (contador == 15):
+            print('Parabens you won!')
+            ganhou = True
+        contador += 1
+        prize *= 2
+    else:
+        print('Resposta incorreta, burro!')
+        acertou = False    
+
